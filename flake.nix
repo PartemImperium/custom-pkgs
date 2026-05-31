@@ -14,14 +14,6 @@
     forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
   in
   {
-
-    packages = forAllSystems (system:
-      let 
-        pkgs = nixpkgs.legacyPackages.${system};
-      in
-      {
-        xlaserpointer = pkgs.callPackage ./pkgs/xlaserpointer/default.nix {};
-      }
-    );
+    packages = forAllSystems (system: import ./pkgs/default.nix {pkgs = nixpkgs.legacyPackages.${system}; } );
   };
 }
