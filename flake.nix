@@ -5,20 +5,23 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs = { self, nixpkgs }: 
+  let 
+    # Define the architectures you intend to support
+    supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+    
+    # Helper function to generate attributes for each system
+    forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
+  in
+  {
 
-    packages.x86_64-linux.xlaserpointer = nixpkgs.legacyPackages.x86_64-linux.stdenv.mkDerivation rec {
-      pname = "xlaserpointer";
-      version = "1.0.0";
-      src = nixpkgs.legacyPackages.x86_64-linux.fetchFromGitHub {
-        owner = "PartemImperium";
-        repo = "xlaserpointer";
-        rev = "v${version}"; 
-        hash = "sha256-PXArDTeeQ4PyUviT6t4LEDM+LoEwj9Gy/x3qV+KS428="; 
-      };
-
-      # Tools needed during build time (like cmake)
-      nativeBuildInputs = with nixpkgs.legacyPackages.x86_64-linux;[ cmake pkg-config libX11 libXfixes libXi cairo ];
-    };
+    packages = forAllSystems (system:
+      let 
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      {
+        xlaserpointer = pkgs.callPackage ./pkgs/xlaserpointer/default.nix {};
+      }
+    );
   };
 }
