@@ -7,8 +7,6 @@
 
   outputs = { self, nixpkgs }: {
 
-    packages.x86_64-linux.hello-imperium = nixpkgs.legacyPackages.x86_64-linux.hello;
-
     packages.x86_64-linux.xlaserpointer = nixpkgs.legacyPackages.x86_64-linux.stdenv.mkDerivation rec {
       pname = "xlaserpointer";
       version = "1.0.0";
@@ -20,7 +18,7 @@
       };
 
       # Tools needed during build time (like cmake)
-      nativeBuildInputs = with nixpkgs.legacyPackages.x86_64-linux;[ cmake pkg-config xorg.libX11 xorg.libXfixes xorg.libXi cairo ];
+      nativeBuildInputs = with nixpkgs.legacyPackages.x86_64-linux;[ cmake pkg-config libX11 libXfixes libXi cairo ];
     };
   };
 }
