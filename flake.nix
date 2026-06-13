@@ -15,5 +15,11 @@
   in
   {
     packages = forAllSystems (system: import ./pkgs/default.nix {pkgs = import nixpkgs { inherit system; config.allowUnfree = true; }; } );
+
+    homeModules.custom = 
+      { ... }:
+      {
+         imports = [ ./modules/home-manager/default.nix ]; 
+      };
   };
 }
