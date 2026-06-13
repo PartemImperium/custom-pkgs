@@ -1,6 +1,6 @@
 { pkgs }:
 
 rec {
- xlaserpointer = pkgs.callPackage ./xlaserpointer/default.nix {};
- plex-dbrepair = pkgs.callPackage ./plex-dbrepair/default.nix {};
+    xlaserpointer = pkgs.callPackage ./xlaserpointer/default.nix {};
+    plex-dbrepair = pkgs.callPackage ./plex-dbrepair/default.nix {};
 }
