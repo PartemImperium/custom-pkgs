@@ -31,7 +31,7 @@ in
   config = mkIf cfg.enable {
     programs.zsh.initContent = mkOrder 9999 ''
     #Starship Module
-    ttyPath=$(tty)#TODO: Make tty command use a pkg so it is not reliant on it existing.. coreutils has it but I am not sure 
+    ttyPath=$(tty) #TODO: Make tty command use a pkg so it is not reliant on it existing.. coreutils has it but I am not sure 
 
     if [[ $ttyPath =~ /dev/tty[0-9]+ ]]; then
       export STARSHIP_CONFIG="${tomlFormat.generate "starship.toml" cfg.ttyConfig}"
