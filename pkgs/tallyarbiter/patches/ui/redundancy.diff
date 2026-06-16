@@ -1,0 +1,13 @@
+--- a/package.json
++++ b/package.json
+@@ -2,8 +2,8 @@
+ 	"name": "tallyarbiter-ui",
+ 	"version": "3.1.1",
+ 	"scripts": {
+-		"prestart": "node git.version.js && cd .. && npm run redundancyjs",
+-		"prebuild": "node git.version.js && cd .. && npm run redundancyjs",
++		"prestart": "node git.version.js",
++		"prebuild": "node git.version.js",
+ 		"ng": "ng",
+ 		"start": "ng serve",
+ 		"build": "ng build",

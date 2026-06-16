@@ -1,0 +1,11 @@
+--- a/angular.json
++++ b/angular.json
+@@ -23,7 +23,7 @@
+ 				"build": {
+ 					"builder": "@angular-devkit/build-angular:browser",
+ 					"options": {
+-						"outputPath": "../ui-dist",
++						"outputPath": "dist",
+ 						"index": "src/index.html",
+ 						"main": "src/main.ts",
+ 						"polyfills": "src/polyfills.ts",

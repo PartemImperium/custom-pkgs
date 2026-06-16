@@ -1,0 +1,20 @@
+--- a/git.version.js
++++ b/git.version.js
+@@ -1,14 +1,11 @@
+ //based on https://stackoverflow.com/a/42199863
+ 
+ const { writeFileSync } = require('fs')
+-const { promisify } = require('util')
+-const { exec } = require('child_process')
+-const exec_promise = promisify(exec)
+ 
+ async function createVersionsFile(filename) {
+-	const revision = (await exec_promise('git rev-parse --short HEAD')).stdout.toString().trim()
+-	const branch = (await exec_promise('git rev-parse --abbrev-ref HEAD')).stdout.toString().trim()
+-	const remote_url = (await exec_promise('git config --get remote.origin.url')).stdout.toString().trim()
++	const revision = process.env.APP_VERSION
++	const branch = process.env.APP_BRANCH
++	const remote_url = process.env.APP_REMOTE
+ 
+ 	console.log(`revision: '${revision}', branch: '${branch}', remote_url: '${remote_url}'`)
+ 

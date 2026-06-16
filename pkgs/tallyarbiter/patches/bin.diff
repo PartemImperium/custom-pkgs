@@ -1,0 +1,11 @@
+--- a/package.json
++++ b/package.json
+@@ -29,7 +29,7 @@
+ 	"license": "MIT",
+ 	"author": "Joseph Adams. <joseph@josephadams.dev>",
+ 	"bin": {
+-		"tallyarbiter": "bin/tallyarbiter"
++		"tallyarbiter": "dist/index.js"
+ 	},
+ 	"publishConfig": {
+ 		"access": "public"
