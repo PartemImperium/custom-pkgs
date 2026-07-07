@@ -13,25 +13,38 @@
   };
   outputs = 
     { 
-      self, 
-      nixpkgs-unstable, 
-      nixpkgs-stable, 
+      self,
+      nixpkgs-unstable,
+      nixpkgs-stable,
       home-manager,
     }: 
   let 
-    # Define the architectures you intend to support
-    supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-    
-    # Helper function to generate attributes for each system
-    forAllSystems = nixpkgs-stable.lib.genAttrs supportedSystems;
+    pkg-set-lib = import ./pkg-set-lib.nix { lib = nixpkgs-stable.lib; }; 
   in
   {
-    packages = forAllSystems (system: import ./pkgs/default.nix {pkgs = import nixpkgs-stable { inherit system; config.allowUnfree = true; }; } );
+    packages = pkg-set-lib.createPackageSet nixpkgs-stable;
 
     homeModules.custom = 
       { ... }:
       {
          imports = [ ./modules/home-manager/default.nix ]; 
       };
+
+    # Typically you dont want to pass things into a overlay like this. However this is putting entire package sets in a namespace and the overlay wont have the info it needs without it.
+    overlays = {
+      unstable = final: prev: {
+        unstable = import nixpkgs-unstable {
+          inherit (final) config;
+          inherit (final.stdenv.hostPlatform) system;
+        };
+      };
+
+      custom = final: prev: 
+      {
+        custpkgs = pkg-set-lib.createPackageSet final;
+        custpkgs_unstable = pkg-set-lib.createPackageSet nixpkgs-unstable;
+      };
+    };
+    # overlays = import ./overlays/default.nix { unstable-nixpkgs = nixpkgs-unstable; };
   };
 }
