@@ -22,6 +22,12 @@ This will build the `testing-pacakge` in the `result` directory.
 ### Helpful Docs for packaging a new app
 
 * [Good Outline on Various Language Frameworks](https://ryantm.github.io/nixpkgs/languages-frameworks/index/#chap-language-support)
+* [Changing fetcher isnt updating result](https://nixos.org/manual/nixpkgs/stable/#chap-pkgs-fetchers-caveats)
+
+### Examples of various packaging techniques 
+
+* [Multiple sources (whatcable)](pkgs/whatcable/default.nix)
+* [FetchZip bin download](pkgs/whatbattery/default.nix)
 
 ## Flake input pinning
 
