@@ -43,5 +43,6 @@ stdenv.mkDerivation rec {
         license = licenses.mit;
         homepage = "https://www.whatcable.uk/";
         platforms = platforms.darwin;
+        sourceProvenance = sourceTypes.binaryNativeCode;
     };
 }
