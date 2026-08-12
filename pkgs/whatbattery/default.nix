@@ -35,5 +35,6 @@ stdenv.mkDerivation rec {
         homepage = "https://www.whatbattery.app/";
         platforms = platforms.darwin;
         sourceProvenance = sourceTypes.binaryNativeCode;
+        mainProgram = "whatbattery";
     };
 }

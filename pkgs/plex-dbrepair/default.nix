@@ -28,7 +28,7 @@ let
     '';
   };
 in
-writeShellApplication {
+writeShellApplication rec {
   name = "plex-dbrepair";
 
   # Skips shellcheck and avoids network/evaluation overhead
@@ -41,4 +41,11 @@ writeShellApplication {
     sqlite="${plexRaw}/lib/plexmediaserver/Plex SQLite";
     ${bash}/bin/bash ${realScript}/bin/DBRepair.sh --sqlite "$sqlite" $@
   '';
+
+    meta = with lib; {
+        description = "Shell script to help fix various Plex db courptions.";
+        homepage = "https://github.com/ChuckPa/DBRepair/";
+        platforms = platforms.all;
+        mainProgram = name;
+    };
 }

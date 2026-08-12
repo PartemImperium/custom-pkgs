@@ -44,5 +44,6 @@ stdenv.mkDerivation rec {
         homepage = "https://www.whatcable.uk/";
         platforms = platforms.darwin;
         sourceProvenance = sourceTypes.binaryNativeCode;
+        mainProgram = "whatcable";
     };
 }
