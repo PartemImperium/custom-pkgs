@@ -29,5 +29,6 @@ stdenv.mkDerivation rec {
         license = licenses.mit;
         homepage = "https://www.whatport.app/";
         platforms = platforms.darwin;
+        sourceProvenance = sourceTypes.binaryNativeCode;
     };
 }

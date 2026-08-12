@@ -34,5 +34,6 @@ stdenv.mkDerivation rec {
         license = licenses.mit;
         homepage = "https://www.whatbattery.app/";
         platforms = platforms.darwin;
+        sourceProvenance = sourceTypes.binaryNativeCode;
     };
 }
