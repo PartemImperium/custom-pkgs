@@ -5,11 +5,11 @@
 }:
 stdenv.mkDerivation rec {
     pname = "whatbattery";
-    version = "1.6.0";
+    version = "1.6.3";
 
     src = fetchzip { #TODO: Create package from source instead of using pre built binary.
       url = "https://github.com/darrylmorley/whatbattery/releases/download/v${version}/WhatBattery.zip";
-      sha256 = "sha256-OW9zxfUUdZFXDqPLmArSnBeEuQ/7Bn4YtNTOvnfR6PE=";
+      sha256 = "sha256-iHBH7YkWoC6K92+5W8ZtAqcM0fnITT4id7/7Jk+eb3A=";
       stripRoot = false;
     };
 
