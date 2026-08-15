@@ -42,7 +42,7 @@ For an example with this flake see the below example
   inputs = {
     custompkgs.url = "github:PartemImperium/custom-pkgs/master";
     nixpkgs.follows = "custompkgs/nixpkgs-stable";
-    home-manager.follows = "custompkgs/home-manager"
+    home-manager.follows = "custompkgs/home-manager";
   };
 
   outputs = { self, custompkgs, nixpkgs, home-manager, }:
