@@ -33,5 +33,11 @@
       {
          imports = [ ./modules/home-manager/default.nix ]; 
       };
+
+    nixosModules.custom = 
+      { ... }:
+      {
+        imports = [ ./modules/os/default.nix ];
+      };
   };
 }
