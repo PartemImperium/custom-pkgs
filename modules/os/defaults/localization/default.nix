@@ -1,7 +1,6 @@
 { 
   pkgs,
   lib,
-  stdenv,
   config,
   ...
 }:
@@ -17,6 +16,6 @@ in
     };
   };
 
-  imports = optional stdenv.isLinux ./default.linux.nix 
-        ++ optional stdenv.isDarwin ./default.darwin.nix;
+  imports = optional pkgs.stdenv.isLinux ./default.linux.nix 
+        ++ optional pkgs.stdenv.isDarwin ./default.darwin.nix;
 }
