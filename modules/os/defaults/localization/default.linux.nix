@@ -10,7 +10,7 @@ in
 {
   config  = mkIf pkgs.stdenv.isLinux {
     i18n = {
-      defaultLocale = lib.mkDefault builtins.trace cfg.locale cfg.locale;
+      defaultLocale = lib.mkDefault cfg.locale;
 
       extraLocaleSettings = {
         C_ADDRESS = lib.mkDefault cfg.locale;
