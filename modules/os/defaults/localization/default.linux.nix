@@ -10,18 +10,18 @@ in
 {
   config  = mkIf pkgs.stdenv.isLinux {
     i18n = {
-      defaultLocale = mkDefault builtins.trace cfg.locale cfg.locale;
+      defaultLocale = lib.mkDefault builtins.trace cfg.locale cfg.locale;
 
       extraLocaleSettings = {
-        C_ADDRESS = mkDefault cfg.locale;
-        C_IDENTIFICATION = mkDefault cfg.locale;
-        C_MEASUREMENT = mkDefault cfg.locale;
-        C_MONETARY = mkDefault cfg.locale;
-        C_NAME = mkDefault cfg.locale;
-        C_NUMERIC = mkDefault cfg.locale;
-        C_PAPER = mkDefault cfg.locale;
-        C_TELEPHONE = mkDefault cfg.locale;
-        C_TIME = mkDefault cfg.locale;
+        C_ADDRESS = lib.mkDefault cfg.locale;
+        C_IDENTIFICATION = lib.mkDefault cfg.locale;
+        C_MEASUREMENT = lib.mkDefault cfg.locale;
+        C_MONETARY = lib.mkDefault cfg.locale;
+        C_NAME = lib.mkDefault cfg.locale;
+        C_NUMERIC = lib.mkDefault cfg.locale;
+        C_PAPER = lib.mkDefault cfg.locale;
+        C_TELEPHONE = lib.mkDefault cfg.locale;
+        C_TIME = lib.mkDefault cfg.locale;
       };
     };
   };
