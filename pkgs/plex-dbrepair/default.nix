@@ -2,6 +2,7 @@
   stdenv,
   fetchFromGitHub,
   writeShellApplication,
+  lib,
 
   bash,
   plexRaw,
