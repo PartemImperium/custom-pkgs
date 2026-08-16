@@ -8,9 +8,9 @@ with lib;
 let cfg = config.imperium.defaults.localization; 
 in
 {
-  config  = mkIf pkgs.stdenv.isDarwin {
+  config  = mkIf pkgs.stdenv.isLinux {
     i18n = {
-      defaultLocale = mkDefault cfg.locale;
+      defaultLocale = mkDefault builtins.trace cfg.locale cfg.locale;
 
       extraLocaleSettings = {
         C_ADDRESS = mkDefault cfg.locale;
