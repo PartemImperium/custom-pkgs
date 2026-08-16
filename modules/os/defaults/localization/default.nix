@@ -16,6 +16,8 @@ in
     };
   };
 
-  imports = optional pkgs.stdenv.isLinux ./default.linux.nix 
-        ++ optional pkgs.stdenv.isDarwin ./default.darwin.nix;
+  imports = [
+    ./default.linux.nix 
+    ./default.darwin.nix
+  ];
 }
