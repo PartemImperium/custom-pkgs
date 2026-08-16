@@ -2,14 +2,13 @@
   pkgs,
   lib,
   config,
-  stdenv,
   ...
 }:
 with lib;
 let cfg = config.imperium.defaults.localization; 
 in
 {
-  config  = mkIf stdenv.isDarwin {
+  config  = mkIf pkgs.stdenv.isDarwin {
     i18n = {
       defaultLocale = mkDefault cfg.locale;
 
