@@ -10,7 +10,7 @@ in
 {
   options.imperium.defaults.localization = {
     locale = mkOption {
-      types = lib.types.string;
+      type = lib.types.string;
       default = "en_US.UTF-8";
       description = "Locale to be applied to all locale's with mkDefault.";
     };
