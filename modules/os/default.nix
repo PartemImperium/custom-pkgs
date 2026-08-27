@@ -11,5 +11,6 @@
     
     ./defaults/localization/default.nix
     ./defaults/nix-exprerimental-features/default.nix
+    ./defaults/text-editor/default.nix
   ];
 }
