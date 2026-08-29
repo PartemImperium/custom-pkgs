@@ -16,5 +16,6 @@
     ./defaults/printing/default.nix
     ./defaults/text-editor/default.nix
     ./defaults/domain/default.nix
+    ./defaults/zsh/default.nix
   ];
 }
