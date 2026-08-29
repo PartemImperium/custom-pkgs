@@ -14,8 +14,8 @@
     ./defaults/networking/default.nix
     ./defaults/nix-exprerimental-features/default.nix
     ./defaults/printing/default.nix
+    ./defaults/ssh/default.nix
     ./defaults/text-editor/default.nix
-    ./defaults/domain/default.nix
     ./defaults/zsh/default.nix
   ];
 }
