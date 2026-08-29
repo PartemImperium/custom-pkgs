@@ -19,11 +19,12 @@
       home-manager,
     }: 
   let 
+    lib = nixpkgs-stable.lib;
     # Define the architectures you intend to support
     supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
     
     # Helper function to generate attributes for each system
-    forAllSystems = nixpkgs-stable.lib.genAttrs supportedSystems;
+    forAllSystems = lib.genAttrs supportedSystems;
   in
   {
     packages = forAllSystems (system: import ./pkgs/default.nix {pkgs = import nixpkgs-stable { inherit system; config.allowUnfree = true; }; } );
@@ -39,5 +40,7 @@
       {
         imports = [ ./modules/os/default.nix ];
       };
+
+    hosts = import ./hosts.nix { lib = lib; };
   };
 }
