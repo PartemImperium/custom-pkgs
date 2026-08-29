@@ -13,5 +13,6 @@
     ./defaults/networking/default.nix
     ./defaults/nix-exprerimental-features/default.nix
     ./defaults/text-editor/default.nix
+    ./defaults/domain/default.nix
   ];
 }
