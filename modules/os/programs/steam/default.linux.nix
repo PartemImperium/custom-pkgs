@@ -7,6 +7,7 @@
 }:
 let 
   cfg = config.imperium.programs.steam;
+in
 {
   config = lib.mkIf (cfg.enable && pkgs.stdenv.isLinux && host.isDesktop) {
     programs.steam = {
