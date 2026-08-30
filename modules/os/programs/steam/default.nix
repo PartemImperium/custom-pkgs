@@ -9,7 +9,7 @@
   options.imperium.programs.steam = {
     enable = lib.mkEnableOption "steam";
     startOnLogin = lib.mkOption {
-      type = types.bool;
+      type = lib.types.bool;
       default = true;
       description = "Should Steam be started on session start";
     };
