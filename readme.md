@@ -124,3 +124,16 @@ For an example with this flake see the below example
 * renovate
   * bot to updaate dependencies for you.
   * https://github.com/renovatebot/renovate
+* deploy-rs
+  * tool to help automatically update nix flakes on hosts
+  * (not married to this tool but seems like it will solve the problem)
+  * https://github.com/serokell/deploy-rs
+  * https://www.youtube.com/watch?v=8gh4YXi_Cgk
+* SearXNG
+  * non google search engine. Maybe start using it?
+  * https://www.youtube.com/watch?v=W9iV74uAd2Y
+* https://www.youtube.com/watch?v=DnA4xNTrrqY
+* Zen
+  * new browser that isnt googlified...
+  * https://zen-browser.app/
+  * https://www.youtube.com/watch?v=PhVBCMPx4W4
