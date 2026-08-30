@@ -51,3 +51,76 @@ For an example with this flake see the below example
     };
 }
 ```
+
+## TODO:
+
+* Setup Asyar
+  * Universal local search/ app launcher
+  * https://github.com/Xoshbin/asyar
+* Setup SoulSync
+  * Tool to manage media metadata and suggest new media to obtain
+  * https://github.com/Nezreka/SoulSync/blob/main/Dockerfile
+  * Could be docker container at first to get it going faster
+* nix-init
+  * Tool to make nix packaging easier
+  * https://github.com/nix-community/nix-init
+* nurl
+  * Tool to prefetch nix expressions to get the hash
+  * https://github.com/nix-community/nurl
+* mac app util
+  * Nix tools for nix-darwin installs
+  * https://github.com/hraban/mac-app-util
+* srvos
+  * nixos modules made for servers
+  * https://github.com/nix-community/srvos
+  * I dont plan on using it but looking through it for some ideas to add to my modules
+* nix-melt
+  * nix app that shows dependencies of flakes in a nice little tui
+  * https://github.com/nix-community/nix-melt
+* stylix
+  * helper to style a bunch of stuff consistently in nix configs
+  * https://github.com/nix-community/stylix
+* raspberry-pi-nix
+  * bunch of stuff to make working with nix and raspberry pi's easier
+  * https://github.com/nix-community/raspberry-pi-nix
+* import-tree
+  * nix helper to make importing modules easier
+  * https://github.com/denful/import-tree
+* Skull King Tracket
+  * Tracker for card game Skull King
+  * Needs to be pacakged and make a module that serves the built js
+  * https://github.com/avi-ss/Skull-King-Tracker
+* Grist
+  * Fancy spreadsheet with logic
+  * kinda want to move a bunch of random stuff in here
+  * https://www.youtube.com/watch?v=M3tqYJ9S_J8
+  * https://github.com/gristlabs/grist-core
+* usbeehive
+  * linux tool to tell you what kind of cable is connected
+  * needs to be packaged (maybe create a module as well)
+  * https://github.com/abrauchli/usbeehive
+* plymouth
+  * boot animation app
+  * Get it working with main computer 
+    * attempted once and couldnt get it working fully (I think thats cause nvidia doesnt like it)
+  * https://wiki.nixos.org/wiki/Plymouth
+* direnv
+  * dev environment tool for nix
+  * https://www.youtube.com/watch?v=Oj9AxyiaVvU
+  * https://devenv.sh/
+* darktable
+  * Virtual lighttable and darkroom for photographers
+  * look into using
+  * already packaged
+* Look into universal clipboard manager (and share)
+  * I have a couple ones I have found and want to look into
+    * crosspaste
+      * https://github.com/crosspaste/crosspaste-desktop
+    * UniClipboard
+      * https://github.com/UniClipboard/UniClipboard
+* hidden bar
+  * way to hide some menu bar icons
+  * https://github.com/dwarvesf/hidden
+* renovate
+  * bot to updaate dependencies for you.
+  * https://github.com/renovatebot/renovate
