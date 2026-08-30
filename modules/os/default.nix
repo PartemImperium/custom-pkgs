@@ -17,5 +17,7 @@
     ./defaults/ssh/default.nix
     ./defaults/text-editor/default.nix
     ./defaults/zsh/default.nix
+    
+    ./programs/steam/default.nix
   ];
 }
