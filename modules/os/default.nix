@@ -19,5 +19,6 @@
     ./defaults/zsh/default.nix
     
     ./programs/steam/default.nix
+    ./programs/sudo/default.nix
   ];
 }
