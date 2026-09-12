@@ -7,8 +7,22 @@
 {
   imports = 
   [
+    ./alacritty/default.nix
+    ./bat/default.nix
+    ./curl/default.nix
+    ./ffmpeg/default.nix
+    ./flac/default.nix
+    ./gimp/default.nix
+    ./git/default.nix
     ./glow/default.nix
+    ./handbrake/default.nix
+    ./inkscape/default.nix
+    ./makemkv/default.nix
+    ./picard/default.nix
     ./starship/default.nix
     ./terminal-fetch/default.nix
+    ./vlc/default.nix
+    ./yt-dlp/default.nix
+    ./zsh/default.nix
   ];
 }
