@@ -16,6 +16,9 @@ in
 
   };
   config = mkIf cfg.enable {
-    home.packages = [ cfg.package ];
+    programs.zsh = {
+      enable = true;
+      package = cfg.package;
+    };
   };
 }
