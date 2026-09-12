@@ -19,6 +19,6 @@ in
     programs.alacritty = {
       enable = true;
       package = cfg.package;
-    }
+    };
   };
 }
