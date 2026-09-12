@@ -19,6 +19,7 @@ in
   };
 
   config = lib.mkIf cfg.enable  {
-    security.sudo.extraConfig = "Defaults pwfeedback";
+
+    security.sudo.extraConfig = lib.mkIf cfg.showPassFeedback "Defaults pwfeedback";
   };
 }
