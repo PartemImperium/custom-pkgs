@@ -39,7 +39,7 @@
 	    "  cfg = config.imperium.${1:package};",
 	    "in",
 	    "{",
-	    "  options.imperium.glow = {",
+	    "  options.imperium.${1:package} = {",
 	    "    enable = mkEnableOption \"${1:package}\";",
 	    "",
 	    "    package = mkPackageOption pkgs \"${1:package}\" {};",
